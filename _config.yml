@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Shigan's Blog
+title: Shigan Liu
 subtitle: ''
-description: ''
+description: 'PhD student in Department of Earth System Science, Tsinghua University, Beijing, China'
 keywords:
 author: Shigan Liu
 language: en
@@ -15,11 +15,16 @@ timezone: ''
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://Shigan-Liu.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# abbrlink config
+## https://github.com/rozbo/hexo-abbrlink
+abbrlink:
+  alg: crc32  # support crc16(default) and crc32
+  rep: hex    # support dec(default) and hex
 
 # Directory
 source_dir: source
@@ -106,3 +111,17 @@ deploy:
   type: 'git'
   repo: https://github.com/Shigan-Liu/Shigan-Liu.github.io
   branch: master
+
+# Adds nofollow attribute to all external links in your hexo blog posts automatically.
+## https://github.com/liuzc/hexo-autonofollow
+nofollow:
+    enable: true
+    exclude: # 例外的链接，可将友链放在此处
+    - Shigan-Liu.github.io # 排除你的站点
+    # - 友链地址
+  
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
