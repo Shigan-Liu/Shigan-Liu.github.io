@@ -21,6 +21,18 @@
 <p><span class="math display">\[\frac{2a\cos \theta}{\Omega}\]</span></p>
 <h3 id="chem">Chem</h3>
 <p><span class="math display">\[\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\]</span></p>
+<h3 id="mermaid">Mermaid</h3>
+<pre class="mermaid">sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br>prevail...
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!</pre>
 ]]></content>
       <tags>
         <tag>test</tag>
