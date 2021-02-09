@@ -16,7 +16,8 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-asset-image": "^1.0.0",
     "hexo-autonofollow": "^1.0.1",
-    "hexo-deployer-git": "^2.1.0",
+    "hexo-deployer-git": "github:hexojs/hexo-deployer-git",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index-pin-top": "^0.2.2",
@@ -26,6 +27,7 @@
     "hexo-renderer-pandoc": "^0.3.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
-    "hexo-theme-landscape": "^0.0.3"
+    "hexo-theme-landscape": "^0.0.3",
+    "pandoc-mermaid-filter": "^0.2.0"
   }
 }

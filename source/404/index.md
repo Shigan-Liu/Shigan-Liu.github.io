@@ -6,3 +6,5 @@ permalink: /404
 ---
 
 <center>404 Not Found</center>
+
+<center>Click ![Here](https://shigan-liu.github.io/) to Go Back</center>

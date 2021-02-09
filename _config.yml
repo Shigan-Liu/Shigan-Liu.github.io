@@ -110,7 +110,7 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/Shigan-Liu/Shigan-Liu.github.io
-  branch: master
+  branch: main
 
 # Adds nofollow attribute to all external links in your hexo blog posts automatically.
 ## https://github.com/liuzc/hexo-autonofollow

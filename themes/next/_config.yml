@@ -810,11 +810,12 @@ pdf:
   height: 500px
 
 # Mermaid tag
+# https://www.cnblogs.com/icoty23/p/10911231.html
 mermaid:
-  enable: false
+  enable: true
   # Available themes: default | dark | forest | neutral
   theme: forest
-
+  version: "8.8.0"
 
 # ---------------------------------------------------------------
 # Animation Settings

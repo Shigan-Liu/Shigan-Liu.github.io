@@ -47,3 +47,18 @@ $$\frac{2a\cos \theta}{\Omega}$$
 
 ### Chem
 $$\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}$$
+
+### Mermaid
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+```
