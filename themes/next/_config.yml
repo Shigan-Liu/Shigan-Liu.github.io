@@ -179,6 +179,8 @@ site_state: true
 social:
   GitHub: https://github.com/Shigan-Liu || fab fa-github
   E-Mail: mailto:shigan_liu@outlook.com || fa fa-envelope
+  ResearchGate: https://www.researchgate.net/profile/Shigan_Liu2 || fab fa-researchgate
+  ORCID: https://orcid.org/0000-0002-9480-6907 || fab fa-orcid
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -190,7 +192,7 @@ social:
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
@@ -824,7 +826,7 @@ mermaid:
 # Use velocity to animate everything.
 # For more information: http://velocityjs.org
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:

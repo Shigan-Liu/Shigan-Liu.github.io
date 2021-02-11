@@ -125,3 +125,7 @@ search:
   field: post
   format: html
   limit: 10000
+
+# Mermaid background to transparent
+# 1. https://blog.csdn.net/weixin_33887443/article/details/89512527
+# 2. https://blog.csdn.net/Olivia_Vang/article/details/92987859
