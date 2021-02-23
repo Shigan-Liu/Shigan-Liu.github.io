@@ -1,27 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python Tips</title>
+    <url>/posts/dcbfa745/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong></p>
+<a id="more"></a>
+<h2 id="introduction">1. Introduction</h2>
+<h2 id="tips-for-pandas">2. Tips for Pandas</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="tips-for-xarray">3. Tips for Xarray</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://blog.csdn.net/weixin_42355670/article/details/106007204">cartopy 绘制中国地图，南海诸岛和十段线</a><br>
+2. <a href="https://www.kesci.com/mw/project/5f3c95a3af3980002cbf560b">Cartopy绘图 | 中国地图最正确的使用方式</a><br>
+3. <a href="https://blog.csdn.net/weixin_42372313/article/details/113572786">小白学习cartopy画地图的第一天</a><br>
+4. <a href="https://my.oschina.net/u/4579695/blog/4879010">Python兰伯特投影中国区域等值线图</a><br>
+5. <a href="https://github.com/SciTools/cartopy/issues/1530">How to remove latitude labels in x axis in cartopy 0.18</a></p>
+<h2 id="tips-for-basemap">5. Tips for Basemap</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="tips-for-numpy">6. Tips for Numpy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/posts/4a17b156/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
+    <content><![CDATA[<p><strong>Abstract:</strong> Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+<h1 id="create-a-new-post">1. Create a new post</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
+<h1 id="run-server">2. Run server</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
+<h1 id="generate-static-files">3. Generate static files</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<h1 id="deploy-to-remote-sites">4. Deploy to remote sites</h1>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="math">Math</h3>
+<h1 id="math">5. Math</h1>
 <p><span class="math display">\[\frac{2a\cos \theta}{\Omega}\]</span></p>
-<h3 id="chem">Chem</h3>
+<h1 id="chem">6. Chem</h1>
 <p><span class="math display">\[\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\]</span></p>
-<h3 id="mermaid">Mermaid</h3>
+<h1 id="mermaid">7. Mermaid</h1>
 <pre class="mermaid">sequenceDiagram
     participant Alice
     participant Bob
