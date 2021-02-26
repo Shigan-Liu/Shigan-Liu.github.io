@@ -7,7 +7,7 @@ abbrlink: dcbfa745
 date: 2021-02-23 09:35:44
 ---
 
-**Abstract:**
+**Abstract:** Scientific computing, plotting, and data IO highly rely on packages in python. However,  there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.
 
 <!-- more -->
 
@@ -34,14 +34,18 @@ DatetimeIndex(['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04',
 """
 ```
 
+**References:**       
+
 ## 3. Tips for Xarray
 ```python
-
+import Xarray as xr
 ```
+
+**References:**       
 
 ## 4. Tips for Cartopy
 ```python
-
+import cartopy.crs as ccrs
 ```
 
 **References:**       
@@ -53,10 +57,64 @@ DatetimeIndex(['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04',
  
 ## 5. Tips for Basemap
 ```python
-
+from mpl_toolkits.base import Basemap
+import matplotlib.pyplot as plt
 ```
+
+**References:**       
 
 ## 6. Tips for Numpy
 ```python
-
+import numpy as np
 ```
+
+**References:**       
+
+## 7. Tips for SciPy
+```python
+import scipy
+
+# Regression
+```
+
+**References:**       
+
+## 8. Tips for PyTorch
+```python
+import torch
+```
+
+**References:**       
+
+## 9. Tips for Calendar, Datetime, and Time
+```python
+import calendar
+import datetime as dt
+import time
+
+# Datetime <=> String
+```
+
+**References:**       
+
+## 10. Tips for MatPlotLib and Seaborn
+```python
+import matplotlib.pyplot as plt
+import seaborn as sbn
+
+# Bar Chart
+
+# Pie Chart
+
+# Line Plot
+
+# Scatter Plot
+
+# Color Bar Settings
+
+# Legend Settings
+
+# Design Axes
+```
+
+**References:**       
