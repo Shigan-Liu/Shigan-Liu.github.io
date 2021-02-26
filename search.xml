@@ -3,15 +3,17 @@
   <entry>
     <title>Python Tips</title>
     <url>/posts/dcbfa745/</url>
-    <content><![CDATA[<p><strong>Abstract:</strong></p>
+    <content><![CDATA[<p><strong>Abstract:</strong> Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
 <a id="more"></a>
 <h2 id="introduction">1. Introduction</h2>
 <h2 id="tips-for-pandas">2. Tips for Pandas</h2>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-xarray">3. Tips for Xarray</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong><br>
 1. <a href="https://blog.csdn.net/weixin_42355670/article/details/106007204">cartopy 绘制中国地图，南海诸岛和十段线</a><br>
 2. <a href="https://www.kesci.com/mw/project/5f3c95a3af3980002cbf560b">Cartopy绘图 | 中国地图最正确的使用方式</a><br>
@@ -19,9 +21,23 @@
 4. <a href="https://my.oschina.net/u/4579695/blog/4879010">Python兰伯特投影中国区域等值线图</a><br>
 5. <a href="https://github.com/SciTools/cartopy/issues/1530">How to remove latitude labels in x axis in cartopy 0.18</a></p>
 <h2 id="tips-for-basemap">5. Tips for Basemap</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> mpl_toolkits.base <span class="keyword">import</span> Basemap</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-numpy">6. Tips for Numpy</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-scipy">7. Tips for SciPy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"></span><br><span class="line"><span class="comment"># Regression</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-pytorch">8. Tips for PyTorch</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-calendar-datetime-and-time">9. Tips for Calendar, Datetime, and Time</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Datetime &lt;=&gt; String</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-matplotlib-and-seaborn">10. Tips for MatPlotLib and Seaborn</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 ]]></content>
       <tags>
         <tag>Python</tag>

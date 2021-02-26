@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"shigan-liu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Abstract:">
+  <meta name="description" content="Abstract: Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite di">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Tips">
 <meta property="og:url" content="https://shigan-liu.github.io/posts/dcbfa745/index.html">
 <meta property="og:site_name" content="Shigan Liu">
-<meta property="og:description" content="Abstract:">
+<meta property="og:description" content="Abstract: Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite di">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-23T01:35:44.000Z">
-<meta property="article:modified_time" content="2021-02-23T07:28:49.018Z">
+<meta property="article:modified_time" content="2021-02-25T03:55:41.217Z">
 <meta property="article:author" content="Shigan Liu">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -208,10 +208,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-02-23 09:35:44 / Modified: 15:28:49" itemprop="dateCreated datePublished" datetime="2021-02-23T09:35:44+08:00">2021-02-23</time>
+              <time title="Created: 2021-02-23 09:35:44" itemprop="dateCreated datePublished" datetime="2021-02-23T09:35:44+08:00">2021-02-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-25 11:55:41" itemprop="dateModified" datetime="2021-02-25T11:55:41+08:00">2021-02-25</time>
+              </span>
 
           
 
@@ -224,15 +230,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>Abstract:</strong></p>
+        <p><strong>Abstract:</strong> Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
 <a id="more"></a>
 <h2 id="introduction">1. Introduction</h2>
 <h2 id="tips-for-pandas">2. Tips for Pandas</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-xarray">3. Tips for Xarray</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong><br>
 1. <a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/weixin_42355670/article/details/106007204">cartopy 绘制中国地图，南海诸岛和十段线</a><br>
 2. <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.kesci.com/mw/project/5f3c95a3af3980002cbf560b">Cartopy绘图 | 中国地图最正确的使用方式</a><br>
@@ -240,9 +248,23 @@
 4. <a target="_blank" rel="external nofollow noopener noreferrer" href="https://my.oschina.net/u/4579695/blog/4879010">Python兰伯特投影中国区域等值线图</a><br>
 5. <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/SciTools/cartopy/issues/1530">How to remove latitude labels in x axis in cartopy 0.18</a></p>
 <h2 id="tips-for-basemap">5. Tips for Basemap</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mpl_toolkits.base <span class="keyword">import</span> Basemap</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 <h2 id="tips-for-numpy">6. Tips for Numpy</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-scipy">7. Tips for SciPy</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"></span><br><span class="line"><span class="comment"># Regression</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-pytorch">8. Tips for PyTorch</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-calendar-datetime-and-time">9. Tips for Calendar, Datetime, and Time</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Datetime &lt;=&gt; String</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-matplotlib-and-seaborn">10. Tips for MatPlotLib and Seaborn</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
 
     </div>
 
@@ -340,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-pandas"><span class="nav-text">2. Tips for Pandas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-xarray"><span class="nav-text">3. Tips for Xarray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-cartopy"><span class="nav-text">4. Tips for Cartopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-basemap"><span class="nav-text">5. Tips for Basemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-numpy"><span class="nav-text">6. Tips for Numpy</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-pandas"><span class="nav-text">2. Tips for Pandas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-xarray"><span class="nav-text">3. Tips for Xarray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-cartopy"><span class="nav-text">4. Tips for Cartopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-basemap"><span class="nav-text">5. Tips for Basemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-numpy"><span class="nav-text">6. Tips for Numpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-scipy"><span class="nav-text">7. Tips for SciPy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-pytorch"><span class="nav-text">8. Tips for PyTorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-calendar-datetime-and-time"><span class="nav-text">9. Tips for Calendar, Datetime, and Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-for-matplotlib-and-seaborn"><span class="nav-text">10. Tips for MatPlotLib and Seaborn</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
