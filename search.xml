@@ -44,6 +44,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Deep Brief Network</title>
+    <url>/posts/34f88668/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong></p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/posts/4a17b156/</url>
     <content><![CDATA[<p><strong>Abstract:</strong> Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -79,6 +91,18 @@
 ]]></content>
       <tags>
         <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch Notes</title>
+    <url>/posts/6eaa0ee7/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong> <a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
 </search>
