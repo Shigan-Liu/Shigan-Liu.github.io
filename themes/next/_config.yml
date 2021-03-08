@@ -204,6 +204,7 @@ links_settings:
 
 links:
   #Title: http://yoursite.com
+  Shigan's CV: /ShiganCV.pdf
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
