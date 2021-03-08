@@ -16,6 +16,15 @@ date: 2021-03-07 21:03:25
 ## 1.1. Packages Management
 There are two main mathods to install packages for R that using R function `install.packages('packages')` or using `conda install r-packages`.
 
+When loading packages, both `require('package')` and `library('package')` are available. However, there is a essential difference between the two commands that `library()` will raise an error when the package is not available while `require()` merely returns `FALSE`. In other words, `library()` loads a package, and `require()` **tries** to load a package. Detailed discussion could be found in [What is the difference between require() and library()?](https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library) and [library() vs require() in R](https://yihui.org/en/2014/07/library-vs-require/).
+
+Some R packages are hard to install, I tried many times and finally succeeded. Here are instuctions:
+
+```bash
+# rgdal
+$ conda install -c conda-forge r-rgdal 
+```
+
 ## 1.2. Run R Scripts in Command Line
 ```bash
 $ Rscript your_r_script.R
