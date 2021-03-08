@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>R Language Notes</title>
+    <url>/posts/72aeab1e/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong> R is a common-used language especially for statistical analysis. I am a skilled user of python, NCL(Ncar Command Language), C Shell, and Fortran, but rarely use R. It is necessary to maintain such a post to note basic knowledge and tips for R.</p>
+<a id="more"></a>
+<h1 id="basics-of-r">1. Basics of R</h1>
+<h2 id="packages-management">1.1. Packages Management</h2>
+<p>There are two main mathods to install packages for R that using R function <code>install.packages('packages')</code> or using <code>conda install r-packages</code>.</p>
+<p>When loading packages, both <code>require('package')</code> and <code>library('package')</code> are available. However, there is a essential difference between the two commands that <code>library()</code> will raise an error when the package is not available while <code>require()</code> merely returns <code>FALSE</code>. In other words, <code>library()</code> loads a package, and <code>require()</code> <strong>tries</strong> to load a package. Detailed discussion could be found in <a href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a> and <a href="https://yihui.org/en/2014/07/library-vs-require/">library() vs require() in R</a>.</p>
+<p>Some R packages are hard to install, I tried many times and finally succeeded. Here are instuctions:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rgdal</span></span><br><span class="line">$ conda install -c conda-forge r-rgdal </span><br></pre></td></tr></table></figure>
+<h2 id="run-r-scripts-in-command-line">1.2. Run R Scripts in Command Line</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Rscript your_r_script.R</span><br></pre></td></tr></table></figure>
+<h2 id="arrays-and-matrices">1.3. Arrays and Matrices</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Get dims of matrix</span></span><br><span class="line">Dims &lt;- <span class="built_in">dim</span>(your_matrix)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get length of Array</span></span><br><span class="line">Len &lt;- <span class="built_in">length</span>(your_array)</span><br></pre></td></tr></table></figure>
+<h2 id="loops">1.4. Loops</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ()</span><br></pre></td></tr></table></figure>
+<h2 id="string">1.5. String</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># combine strings</span></span><br><span class="line">paste()</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://blog.csdn.net/waple_0820/article/details/53171784">R语言中字符串的拼接操作</a></p>
+<h1 id="some-tips-for-r">2. Some Tips for R</h1>
+<h2 id="data-io">2.1. Data IO</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Read *.dbf data</span></span><br><span class="line">library(foreign)</span><br><span class="line"></span><br><span class="line">data &lt;- read.dbf(<span class="string">&#x27;your_dbf_data.dbf&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read *.nc data</span></span><br><span class="line">data &lt;- nc_open(<span class="string">&#x27;your_nc_data.nc)</span></span><br><span class="line"><span class="string">names(data$var)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PM25 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM25<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">PM10 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM10<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://www.jianshu.com/p/690f3e1f3ee0">【R】R语言NC文件读写</a></p>
+<h2 id="date-and-time">2.2. Date and Time</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create date seq</span></span><br><span class="line">start_date = <span class="string">&#x27;2017-01-01&#x27;</span></span><br><span class="line">ndays = <span class="number">31</span></span><br><span class="line">calendar = seq.Date(from=as.Date(start_date, format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>), by=<span class="string">&#x27;day&#x27;</span>, length.out=ndays)</span><br><span class="line">calendar &lt;- format(calendar, format=<span class="string">&quot;%Y%m%d&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="http://blog.sciencenet.cn/blog-247792-837263.html">R语言中生成日期序列</a></p>
+]]></content>
+      <tags>
+        <tag>R</tag>
+        <tag>Statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Classic Literature</title>
+    <url>/posts/beb4e2e0/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong></p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Literature</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deep Brief Network</title>
+    <url>/posts/34f88668/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong></p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch Notes</title>
+    <url>/posts/6eaa0ee7/</url>
+    <content><![CDATA[<p><strong>Abstract:</strong> <a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python Tips</title>
     <url>/posts/dcbfa745/</url>
     <content><![CDATA[<p><strong>Abstract:</strong> Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
@@ -41,68 +111,6 @@
 ]]></content>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Brief Network</title>
-    <url>/posts/34f88668/</url>
-    <content><![CDATA[<p><strong>Abstract:</strong></p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156/</url>
-    <content><![CDATA[<p><strong>Abstract:</strong> Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-<h1 id="create-a-new-post">1. Create a new post</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h1 id="run-server">2. Run server</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h1 id="generate-static-files">3. Generate static files</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h1 id="deploy-to-remote-sites">4. Deploy to remote sites</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h1 id="math">5. Math</h1>
-<p><span class="math display">\[\frac{2a\cos \theta}{\Omega}\]</span></p>
-<h1 id="chem">6. Chem</h1>
-<p><span class="math display">\[\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\]</span></p>
-<h1 id="mermaid">7. Mermaid</h1>
-<pre class="mermaid">sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br>prevail...
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!</pre>
-]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyTorch Notes</title>
-    <url>/posts/6eaa0ee7/</url>
-    <content><![CDATA[<p><strong>Abstract:</strong> <a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Deep Learning</tag>
       </tags>
   </entry>
 </search>
