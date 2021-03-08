@@ -7,7 +7,7 @@
 <a id="more"></a>
 <h1 id="basics-of-r">1. Basics of R</h1>
 <h2 id="packages-management">1.1. Packages Management</h2>
-<p>There are two main mathods to install packages for R that using R function <code>install.packages('packages')</code> or using <code>conda install r-packages</code>.</p>
+<p>There are two main mathods to install packages for R that using R function <code>install.packages('packages')</code> and using <code>conda install r-packages</code>.</p>
 <p>When loading packages, both <code>require('package')</code> and <code>library('package')</code> are available. However, there is a essential difference between the two commands that <code>library()</code> will raise an error when the package is not available while <code>require()</code> merely returns <code>FALSE</code>. In other words, <code>library()</code> loads a package, and <code>require()</code> <strong>tries</strong> to load a package. Detailed discussion could be found in <a href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a> and <a href="https://yihui.org/en/2014/07/library-vs-require/">library() vs require() in R</a>.</p>
 <p>Some R packages are hard to install, I tried many times and finally succeeded. Here are instuctions:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rgdal</span></span><br><span class="line">$ conda install -c conda-forge r-rgdal </span><br></pre></td></tr></table></figure>
