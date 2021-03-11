@@ -7,7 +7,7 @@ abbrlink: dcbfa745
 date: 2021-02-23 09:35:44
 ---
 
-**Abstract:** Scientific computing, plotting, and data IO highly rely on packages in python. However,  there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.
+Scientific computing, plotting, and data IO highly rely on packages in python. However,  there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.
 
 <!-- more -->
 

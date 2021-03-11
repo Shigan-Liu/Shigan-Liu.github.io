@@ -8,7 +8,7 @@ abbrlink: 72aeab1e
 date: 2021-03-07 21:03:25
 ---
 
-**Abstract:** R is a common-used language especially for statistical analysis. I am a skilled user of python, NCL(Ncar Command Language), C Shell, and Fortran, but rarely use R. It is necessary to maintain such a post to note basic knowledge and tips for R.
+R is a common-used language especially for statistical analysis. I am a skilled user of python, NCL(Ncar Command Language), C Shell, and Fortran, but rarely use R. It is necessary to maintain such a post to note basic knowledge and tips for R.
 
 <!-- more -->
 
