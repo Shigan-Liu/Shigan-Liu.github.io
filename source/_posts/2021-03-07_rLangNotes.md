@@ -79,6 +79,8 @@ start_date = '2017-01-01'
 ndays = 31
 calendar = seq.Date(from=as.Date(start_date, format='%Y-%m-%d'), by='day', length.out=ndays)
 calendar <- format(calendar, format="%Y%m%d")
+calendarJ = seq.Date(from=as.Date(start_date, format='%Y-%m-%d'), by='day', length.out=ndays)
+calendarJ <- format(calendarJ, format="%Y%j")
 ```
 
 **References:**           
