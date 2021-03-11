@@ -24,27 +24,27 @@
   <meta name="description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shigan Liu">
-<meta property="og:url" content="https://shigan-liu.github.io/archives/2021/02/index.html">
+<meta property="og:url" content="https://shigan-liu.github.io/page/2/index.html">
 <meta property="og:site_name" content="Shigan Liu">
 <meta property="og:description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Shigan Liu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://shigan-liu.github.io/archives/2021/02/">
+<link rel="canonical" href="https://shigan-liu.github.io/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Shigan Liu</title>
+  <title>Shigan Liu</title>
   
 
 
@@ -174,49 +174,87 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://shigan-liu.github.io/posts/dcbfa745/">
 
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
-      </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Shigan_Liu.jpg">
+      <meta itemprop="name" content="Shigan Liu">
+      <meta itemprop="description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shigan Liu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/dcbfa745/" class="post-title-link" itemprop="url">Python Tips</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-23 09:35:44" itemprop="dateCreated datePublished" datetime="2021-02-23T09:35:44+08:00">2021-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-11 19:23:53" itemprop="dateModified" datetime="2021-03-11T19:23:53+08:00">2021-03-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+          <p>Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/dcbfa745/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-02-23T09:35:44+08:00" content="2021-02-23">
-          02-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/dcbfa745/" itemprop="url">
-            <span itemprop="name">Python Tips</span>
-          </a>
-      </div>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
-
-
-    </div>
-  </div>
   
   
   
 
+
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
@@ -410,6 +448,61 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

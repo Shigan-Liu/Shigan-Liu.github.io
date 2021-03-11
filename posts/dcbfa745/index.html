@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"shigan-liu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Abstract: Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite di">
+  <meta name="description" content="Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different fo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Tips">
 <meta property="og:url" content="https://shigan-liu.github.io/posts/dcbfa745/index.html">
 <meta property="og:site_name" content="Shigan Liu">
-<meta property="og:description" content="Abstract: Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite di">
+<meta property="og:description" content="Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different fo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-23T01:35:44.000Z">
-<meta property="article:modified_time" content="2021-02-25T03:55:41.217Z">
+<meta property="article:modified_time" content="2021-03-11T11:23:53.253Z">
 <meta property="article:author" content="Shigan Liu">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -127,12 +127,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">5</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">6</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-25 11:55:41" itemprop="dateModified" datetime="2021-02-25T11:55:41+08:00">2021-02-25</time>
+                <time title="Modified: 2021-03-11 19:23:53" itemprop="dateModified" datetime="2021-03-11T19:23:53+08:00">2021-03-11</time>
               </span>
 
           
@@ -230,14 +230,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>Abstract:</strong> Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
+        <p>Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
 <a id="more"></a>
 <h2 id="introduction">1. Introduction</h2>
 <h2 id="tips-for-pandas">2. Tips for Pandas</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = [<span class="built_in">str</span>(i).split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>].replace(<span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> dates]</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[&#x27;20170101&#x27;, &#x27;20170102&#x27;, &#x27;20170103&#x27;, &#x27;20170104&#x27;, &#x27;20170105&#x27;, &#x27;20170106&#x27;, &#x27;20170107&#x27;, &#x27;20170108&#x27;, &#x27;20170109&#x27;, &#x27;20170110&#x27;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong></p>
 <h2 id="tips-for-xarray">3. Tips for Xarray</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br><span class="line"></span><br><span class="line"><span class="comment"># NetCDF File IO</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong></p>
 <h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br></pre></td></tr></table></figure>
