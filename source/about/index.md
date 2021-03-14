@@ -17,7 +17,8 @@ I am now a Ph.D. student in Department of Earth System Science, Tsinghua Univers
 Because my research relies highly on numerical models, such as The Weather Research and Forecasting Model (WRF) and Community Multiscale Air Quality Modeling System (CMAQ), I am capable to use Linux and often write codes to solve problems. I am familiar with shell scripts (e.g. bash/csh), Go language, NCAR Command Language (NCL), and Python and some of its packages like MatPlotLib, Pandas, NumPy and etc. I use EndNote and Evernote to organize the knowledge base, use Word (Microsoft Office), Markdown and LaTeX to write articles and posts.
 
 ## 1.3. Publications
-
+**Submitted/In preparation:**       
+Geng G., Xiao Q., <u>**Liu S.**</u>, et al.: Tracking Air Pollution in China: Near Real-Time PM2.5 Retrievals from Multiple Data Sources, 2021
 
 # 2. About the website
 This is the first website I built in March 2020 based on [GitHub Pages](https://pages.github.com/) and a static blog framework, [Hexo](https://hexo.io/). If you have questions or advice on the posts, feel free to send me an email (address: shigan_liu AT outlook DOT com).
