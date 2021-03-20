@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Cheat Sheets</title>
+    <url>/posts/f341ad60/</url>
+    <content><![CDATA[<p>Cheat Sheets help me to quickly consult to some commands.</p>
+<a id="more"></a>
+<h1 id="github-git-cheat-sheet">1. GitHub Git Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page1.png"></p>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page2.png"></p>
+]]></content>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WRF-CMAQ Model Framework</title>
     <url>/posts/b4df9b3e/</url>
     <content><![CDATA[<p>The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simulate the air quality. CMAQ relies on meteorological data to driven the simulated atmosphere so that the emissions, chemical and physical processes could work. We traditionally use the Weather Research and Forecasting (WRF) Model to provide the meteorological field. This post gives an overview of how the WRF-CMAQ modeling system organized and those data needed.</p>
@@ -17,7 +31,7 @@
     <url>/posts/6a0a8c60/</url>
     <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
 <blockquote>
-<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
+<p>Ying, Xue. "An overview of overfitting and its solutions." Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
 </blockquote>
 <a id="more"></a>
 ]]></content>
@@ -135,7 +149,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Datetime &lt;=&gt; String</span></span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong></p>
 <h2 id="tips-for-matplotlib-and-seaborn">10. Tips for MatPlotLib and Seaborn</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>]=[<span class="string">&#x27;SimHei&#x27;</span>] <span class="comment"># To support Chinese character</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="literal">False</span> <span class="comment"># To display minus </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
 <p><strong>References:</strong></p>
 ]]></content>
       <tags>

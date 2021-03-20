@@ -29,7 +29,7 @@
 <meta property="og:description" content="1. About me Hello, my name is Shigan Liu. Welcome to my personal website! I am now a Ph.D. student in Department of Earth System Science, Tsinghua University, Beijing, China. My research is focused">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-07T13:33:08.000Z">
-<meta property="article:modified_time" content="2021-03-14T10:51:42.306Z">
+<meta property="article:modified_time" content="2021-03-15T12:14:19.000Z">
 <meta property="article:author" content="Shigan Liu">
 <meta name="twitter:card" content="summary">
 
@@ -127,12 +127,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -212,7 +212,7 @@
 <p>Because my research relies highly on numerical models, such as The Weather Research and Forecasting Model (WRF) and Community Multiscale Air Quality Modeling System (CMAQ), I am capable to use Linux and often write codes to solve problems. I am familiar with shell scripts (e.g. bash/csh), Go language, NCAR Command Language (NCL), and Python and some of its packages like MatPlotLib, Pandas, NumPy and etc. I use EndNote and Evernote to organize the knowledge base, use Word (Microsoft Office), Markdown and LaTeX to write articles and posts.</p>
 <h2 id="publications">1.3. Publications</h2>
 <p><strong>Submitted/In preparation:</strong><br>
-Geng G., Xiao Q., <u><strong>Liu S.</strong></u>, et al.: Tracking Air Pollution in China: Near Real-Time PM2.5 Retrievals from Multiple Data Sources, 2021</p>
+Geng, G., Xiao, Q., Liu, <u><strong>S., Liu</strong></u>, X., Cheng, J., Zheng, Y., Tong, D., Zheng, B., Peng, Y., Huang, X., He, K., &amp; Zhang, Q. (2021). Tracking air pollution in China: Near real-time PM2.5 retrievals from multiple data sources. https://arxiv.org/abs/2103.06520</p>
 <h1 id="about-the-website">2. About the website</h1>
 <p>This is the first website I built in March 2020 based on <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pages.github.com/">GitHub Pages</a> and a static blog framework, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io/">Hexo</a>. If you have questions or advice on the posts, feel free to send me an email (address: shigan_liu AT outlook DOT com).</p>
 
@@ -399,6 +399,26 @@ Geng G., Xiao Q., <u><strong>Liu S.</strong></u>, et al.: Tracking Air Pollution
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 <script>

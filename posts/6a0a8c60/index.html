@@ -29,7 +29,7 @@
 <meta property="og:description" content="Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-11T06:37:43.000Z">
-<meta property="article:modified_time" content="2021-03-11T11:29:25.349Z">
+<meta property="article:modified_time" content="2021-03-11T11:29:25.000Z">
 <meta property="article:author" content="Shigan Liu">
 <meta property="article:tag" content="Literature">
 <meta property="article:tag" content="Deep Learning">
@@ -129,12 +129,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -228,7 +228,7 @@
       
         <p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
 <blockquote>
-<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
+<p>Ying, Xue. "An overview of overfitting and its solutions." Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
 </blockquote>
 <a id="more"></a>
 
@@ -455,6 +455,26 @@
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 <script>
