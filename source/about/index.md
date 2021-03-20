@@ -18,7 +18,7 @@ Because my research relies highly on numerical models, such as The Weather Resea
 
 ## 1.3. Publications
 **Submitted/In preparation:**       
-Geng G., Xiao Q., <u>**Liu S.**</u>, et al.: Tracking Air Pollution in China: Near Real-Time PM2.5 Retrievals from Multiple Data Sources, 2021
+Geng, G., Xiao, Q., Liu, <u>**S., Liu**</u>, X., Cheng, J., Zheng, Y., Tong, D., Zheng, B., Peng, Y., Huang, X., He, K., & Zhang, Q. (2021). Tracking air pollution in China: Near real-time PM2.5 retrievals from multiple data sources. https://arxiv.org/abs/2103.06520
 
 # 2. About the website
 This is the first website I built in March 2020 based on [GitHub Pages](https://pages.github.com/) and a static blog framework, [Hexo](https://hexo.io/). If you have questions or advice on the posts, feel free to send me an email (address: shigan_liu AT outlook DOT com).

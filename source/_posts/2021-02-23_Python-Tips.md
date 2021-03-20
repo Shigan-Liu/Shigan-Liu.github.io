@@ -109,6 +109,9 @@ import time
 import matplotlib.pyplot as plt
 import seaborn as sbn
 
+plt.rcParams['font.sans-serif']=['SimHei'] # To support Chinese character
+plt.rcParams['axes.unicode_minus']=False # To display minus 
+
 # Bar Chart
 
 # Pie Chart
