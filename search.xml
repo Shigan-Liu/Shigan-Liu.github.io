@@ -1,93 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Cheat Sheets</title>
-    <url>/posts/f341ad60/</url>
-    <content><![CDATA[<p>Cheat Sheets help me to quickly consult to some commands.</p>
-<a id="more"></a>
-<h1 id="github-git-cheat-sheet">1. GitHub Git Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/github-git-cheat-sheet_page1.png"></p>
-<p><img src="/posts/f341ad60/github-git-cheat-sheet_page2.png"></p>
-<h1 id="matplotlib-cheat-sheet">2. MatPlotLib Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/matplotlib_cheatsheets-1.png"></p>
-<p><img src="/posts/f341ad60/matplotlib_cheatsheets-2.png"></p>
-<h1 id="pytorch-cheat-sheet">3. PyTorch Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/pytorch-cheat.jpg"></p>
-<h1 id="vim-cheat-sheet">4. Vim Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/10-Best-VIM-Cheat-Sheet-03.jpg"></p>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-        <tag>Vi/Vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WRF-CMAQ Model Framework</title>
-    <url>/posts/b4df9b3e/</url>
-    <content><![CDATA[<p>The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simulate the air quality. CMAQ relies on meteorological data to driven the simulated atmosphere so that the emissions, chemical and physical processes could work. We traditionally use the Weather Research and Forecasting (WRF) Model to provide the meteorological field. This post gives an overview of how the WRF-CMAQ modeling system organized and those data needed.</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>WRF</tag>
-        <tag>CMAQ</tag>
-        <tag>Numerical Model</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reading Notes for Overfitting and its Solutions</title>
-    <url>/posts/6a0a8c60/</url>
-    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
-<blockquote>
-<p>Ying, Xue. "An overview of overfitting and its solutions." Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
-</blockquote>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Literature</tag>
-        <tag>Deep Learning</tag>
-        <tag>Overfitting</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>R Language Notes</title>
-    <url>/posts/72aeab1e/</url>
-    <content><![CDATA[<p>R is a common-used language especially for statistical analysis. I am a skilled user of python, NCL(Ncar Command Language), C Shell, and Fortran, but rarely use R. It is necessary to maintain such a post to note basic knowledge and tips for R.</p>
-<a id="more"></a>
-<h1 id="basics-of-r">1. Basics of R</h1>
-<h2 id="packages-management">1.1. Packages Management</h2>
-<p>There are two main mathods to install packages for R that using R function <code>install.packages('packages')</code> and using <code>conda install r-packages</code>.</p>
-<p>When loading packages, both <code>require('package')</code> and <code>library('package')</code> are available. However, there is a essential difference between the two commands that <code>library()</code> will raise an error when the package is not available while <code>require()</code> merely returns <code>FALSE</code>. In other words, <code>library()</code> loads a package, and <code>require()</code> <strong>tries</strong> to load a package. Detailed discussion could be found in <a href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a> and <a href="https://yihui.org/en/2014/07/library-vs-require/">library() vs require() in R</a>.</p>
-<p>Some R packages are hard to install, I tried many times and finally succeeded. Here are instuctions:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rgdal</span></span><br><span class="line">$ conda install -c conda-forge r-rgdal </span><br></pre></td></tr></table></figure>
-<h2 id="run-r-scripts-in-command-line">1.2. Run R Scripts in Command Line</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Rscript your_r_script.R</span><br></pre></td></tr></table></figure>
-<h2 id="arrays-and-matrices">1.3. Arrays and Matrices</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Get dims of matrix</span></span><br><span class="line">Dims &lt;- <span class="built_in">dim</span>(your_matrix)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get length of Array</span></span><br><span class="line">Len &lt;- <span class="built_in">length</span>(your_array)</span><br></pre></td></tr></table></figure>
-<h2 id="loops">1.4. Loops</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ()</span><br></pre></td></tr></table></figure>
-<h2 id="string">1.5. String</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># combine strings</span></span><br><span class="line">paste()</span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong><br>
-1. <a href="https://blog.csdn.net/waple_0820/article/details/53171784">R语言中字符串的拼接操作</a></p>
-<h1 id="some-tips-for-r">2. Some Tips for R</h1>
-<h2 id="data-io">2.1. Data IO</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Read *.dbf data</span></span><br><span class="line">library(foreign)</span><br><span class="line"></span><br><span class="line">data &lt;- read.dbf(<span class="string">&#x27;your_dbf_data.dbf&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read *.nc data</span></span><br><span class="line">data &lt;- nc_open(<span class="string">&#x27;your_nc_data.nc)</span></span><br><span class="line"><span class="string">names(data$var)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PM25 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM25<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">PM10 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM10<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong><br>
-1. <a href="https://www.jianshu.com/p/690f3e1f3ee0">【R】R语言NC文件读写</a></p>
-<h2 id="date-and-time">2.2. Date and Time</h2>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create date seq</span></span><br><span class="line">start_date = <span class="string">&#x27;2017-01-01&#x27;</span></span><br><span class="line">ndays = <span class="number">31</span></span><br><span class="line">calendar = seq.Date(from=as.Date(start_date, format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>), by=<span class="string">&#x27;day&#x27;</span>, length.out=ndays)</span><br><span class="line">calendar &lt;- format(calendar, format=<span class="string">&quot;%Y%m%d&quot;</span>)</span><br><span class="line">calendarJ = seq.Date(from=as.Date(start_date, format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>), by=<span class="string">&#x27;day&#x27;</span>, length.out=ndays)</span><br><span class="line">calendarJ &lt;- format(calendarJ, format=<span class="string">&quot;%Y%j&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong><br>
-1. <a href="http://blog.sciencenet.cn/blog-247792-837263.html">R语言中生成日期序列</a></p>
-]]></content>
-      <tags>
-        <tag>R</tag>
-        <tag>Statistics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Classic Literature</title>
     <url>/posts/beb4e2e0/</url>
     <content><![CDATA[<p>Literature management is of great importance and necessities during the doctoral period. Literature downloaded in PDF format takes up a lot of storage space and is difficult to find a specific one. Therefore, I created such a post to record some classic literature that connected much other literature or brought forward key concepts or methods. The literature is sorted alphabetically by the first author's name and topics.</p>
@@ -97,30 +10,6 @@
 ]]></content>
       <tags>
         <tag>Literature</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Brief Network</title>
-    <url>/posts/34f88668/</url>
-    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyTorch Notes</title>
-    <url>/posts/6eaa0ee7/</url>
-    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -164,6 +53,130 @@
 ]]></content>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deep Brief Network</title>
+    <url>/posts/34f88668/</url>
+    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>R Language Notes</title>
+    <url>/posts/72aeab1e/</url>
+    <content><![CDATA[<p>R is a common-used language especially for statistical analysis. I am a skilled user of python, NCL(Ncar Command Language), C Shell, and Fortran, but rarely use R. It is necessary to maintain such a post to note basic knowledge and tips for R.</p>
+<a id="more"></a>
+<h1 id="basics-of-r">1. Basics of R</h1>
+<h2 id="packages-management">1.1. Packages Management</h2>
+<p>There are two main mathods to install packages for R that using R function <code>install.packages('packages')</code> and using <code>conda install r-packages</code>.</p>
+<p>When loading packages, both <code>require('package')</code> and <code>library('package')</code> are available. However, there is a essential difference between the two commands that <code>library()</code> will raise an error when the package is not available while <code>require()</code> merely returns <code>FALSE</code>. In other words, <code>library()</code> loads a package, and <code>require()</code> <strong>tries</strong> to load a package. Detailed discussion could be found in <a href="https://stackoverflow.com/questions/5595512/what-is-the-difference-between-require-and-library">What is the difference between require() and library()?</a> and <a href="https://yihui.org/en/2014/07/library-vs-require/">library() vs require() in R</a>.</p>
+<p>Some R packages are hard to install, I tried many times and finally succeeded. Here are instuctions:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rgdal</span></span><br><span class="line">$ conda install -c conda-forge r-rgdal </span><br></pre></td></tr></table></figure>
+<h2 id="run-r-scripts-in-command-line">1.2. Run R Scripts in Command Line</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Rscript your_r_script.R</span><br></pre></td></tr></table></figure>
+<h2 id="arrays-and-matrices">1.3. Arrays and Matrices</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Get dims of matrix</span></span><br><span class="line">Dims &lt;- <span class="built_in">dim</span>(your_matrix)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get length of Array</span></span><br><span class="line">Len &lt;- <span class="built_in">length</span>(your_array)</span><br></pre></td></tr></table></figure>
+<h2 id="loops">1.4. Loops</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ()</span><br></pre></td></tr></table></figure>
+<h2 id="string">1.5. String</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># combine strings</span></span><br><span class="line">paste()</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://blog.csdn.net/waple_0820/article/details/53171784">R语言中字符串的拼接操作</a></p>
+<h1 id="some-tips-for-r">2. Some Tips for R</h1>
+<h2 id="data-io">2.1. Data IO</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Read *.dbf data</span></span><br><span class="line">library(foreign)</span><br><span class="line"></span><br><span class="line">data &lt;- read.dbf(<span class="string">&#x27;your_dbf_data.dbf&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read *.nc data</span></span><br><span class="line">data &lt;- nc_open(<span class="string">&#x27;your_nc_data.nc)</span></span><br><span class="line"><span class="string">names(data$var)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PM25 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM25<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">PM10 &lt;- ncvar_get( nc = data, varid = &#x27;</span>PM10<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://www.jianshu.com/p/690f3e1f3ee0">【R】R语言NC文件读写</a></p>
+<h2 id="date-and-time">2.2. Date and Time</h2>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create date seq</span></span><br><span class="line">start_date = <span class="string">&#x27;2017-01-01&#x27;</span></span><br><span class="line">ndays = <span class="number">31</span></span><br><span class="line">calendar = seq.Date(from=as.Date(start_date, format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>), by=<span class="string">&#x27;day&#x27;</span>, length.out=ndays)</span><br><span class="line">calendar &lt;- format(calendar, format=<span class="string">&quot;%Y%m%d&quot;</span>)</span><br><span class="line">calendarJ = seq.Date(from=as.Date(start_date, format=<span class="string">&#x27;%Y-%m-%d&#x27;</span>), by=<span class="string">&#x27;day&#x27;</span>, length.out=ndays)</span><br><span class="line">calendarJ &lt;- format(calendarJ, format=<span class="string">&quot;%Y%j&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="http://blog.sciencenet.cn/blog-247792-837263.html">R语言中生成日期序列</a></p>
+]]></content>
+      <tags>
+        <tag>R</tag>
+        <tag>Statistics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyTorch Notes</title>
+    <url>/posts/6eaa0ee7/</url>
+    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WRF-CMAQ Model Framework</title>
+    <url>/posts/b4df9b3e/</url>
+    <content><![CDATA[<p>The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simulate the air quality. CMAQ relies on meteorological data to driven the simulated atmosphere so that the emissions, chemical and physical processes could work. We traditionally use the Weather Research and Forecasting (WRF) Model to provide the meteorological field. This post gives an overview of how the WRF-CMAQ modeling system organized and those data needed.</p>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>WRF</tag>
+        <tag>CMAQ</tag>
+        <tag>Numerical Model</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NCL Tips</title>
+    <url>/posts/70d7b46b/</url>
+    <content><![CDATA[<p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
+<a id="more"></a>
+<h1 id="data-io">1. Data IO</h1>
+<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>NCL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reading Notes for Overfitting and its Solutions</title>
+    <url>/posts/6a0a8c60/</url>
+    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
+<blockquote>
+<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+      <tags>
+        <tag>Literature</tag>
+        <tag>Deep Learning</tag>
+        <tag>Overfitting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cheat Sheets</title>
+    <url>/posts/f341ad60/</url>
+    <content><![CDATA[<p>Cheat Sheets help me to quickly consult to some commands.</p>
+<a id="more"></a>
+<h1 id="github-git-cheat-sheet">1. GitHub Git Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page1.png"></p>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page2.png"></p>
+<h1 id="matplotlib-cheat-sheet">2. MatPlotLib Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/matplotlib_cheatsheets-1.png"></p>
+<p><img src="/posts/f341ad60/matplotlib_cheatsheets-2.png"></p>
+<h1 id="pytorch-cheat-sheet">3. PyTorch Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/pytorch-cheat.jpg"></p>
+<h1 id="vim-cheat-sheet">4. Vim Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/10-Best-VIM-Cheat-Sheet-03.jpg"></p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+        <tag>Vi/Vim</tag>
       </tags>
   </entry>
 </search>

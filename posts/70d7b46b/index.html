@@ -21,17 +21,20 @@
     var CONFIG = {"hostname":"shigan-liu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shigan Liu">
-<meta property="og:url" content="https://shigan-liu.github.io/tags/Statistics/index.html">
+  <meta name="description" content="NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NCL Tips">
+<meta property="og:url" content="https://shigan-liu.github.io/posts/70d7b46b/index.html">
 <meta property="og:site_name" content="Shigan Liu">
-<meta property="og:description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
+<meta property="og:description" content="NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-20T08:25:47.000Z">
+<meta property="article:modified_time" content="2021-03-21T02:02:39.220Z">
 <meta property="article:author" content="Shigan Liu">
+<meta property="article:tag" content="NCL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://shigan-liu.github.io/tags/Statistics/">
+<link rel="canonical" href="https://shigan-liu.github.io/posts/70d7b46b/">
 
 
 <script id="page-configurations">
@@ -39,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: Statistics | Shigan Liu</title>
+  <title>NCL Tips | Shigan Liu</title>
   
 
 
@@ -174,49 +177,109 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Statistics
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://shigan-liu.github.io/posts/70d7b46b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Shigan_Liu.jpg">
+      <meta itemprop="name" content="Shigan Liu">
+      <meta itemprop="description" content="PhD student in Department of Earth System Science, Tsinghua University, Beijing, China">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shigan Liu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NCL Tips
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-20 16:25:47" itemprop="dateCreated datePublished" datetime="2021-03-20T16:25:47+08:00">2021-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-21 10:02:39" itemprop="dateModified" datetime="2021-03-21T10:02:39+08:00">2021-03-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
+<a id="more"></a>
+<h1 id="data-io">1. Data IO</h1>
+<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2021-03-07T21:03:25+08:00" content="2021-03-07">
-          03-07
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Shigan Liu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://shigan-liu.github.io/posts/70d7b46b/" title="NCL Tips">https://shigan-liu.github.io/posts/70d7b46b/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/72aeab1e/" itemprop="url">
-            <span itemprop="name">R Language Notes</span>
-          </a>
-      </div>
 
-    </header>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NCL/" rel="tag"># NCL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/f341ad60/" rel="prev" title="Cheat Sheets">
+      <i class="fa fa-chevron-left"></i> Cheat Sheets
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -269,6 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#data-io"><span class="nav-text">1. Data IO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#read-and-write-files-in-format-of-netcdf"><span class="nav-text">1.1. Read and Write Files in Format of NetCDF</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
