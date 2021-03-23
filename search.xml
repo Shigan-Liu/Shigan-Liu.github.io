@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Classic Literature</title>
-    <url>/posts/beb4e2e0/</url>
-    <content><![CDATA[<p>Literature management is of great importance and necessities during the doctoral period. Literature downloaded in PDF format takes up a lot of storage space and is difficult to find a specific one. Therefore, I created such a post to record some classic literature that connected much other literature or brought forward key concepts or methods. The literature is sorted alphabetically by the first author's name and topics.</p>
+    <title>Deep Brief Network</title>
+    <url>/posts/34f88668/</url>
+    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
 <a id="more"></a>
-<h1 id="lin-zhangs-research-group-peking-university">1. Lin Zhang's Research Group, Peking University</h1>
-<h1 id="qiang-zhangs-research-group-tsinghua-university">2. Qiang Zhang's Research Group, Tsinghua University</h1>
 ]]></content>
       <tags>
-        <tag>Literature</tag>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -56,15 +56,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Deep Brief Network</title>
-    <url>/posts/34f88668/</url>
-    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
+    <title>PyTorch Notes</title>
+    <url>/posts/6eaa0ee7/</url>
+    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
 <a id="more"></a>
 ]]></content>
       <tags>
         <tag>Python</tag>
         <tag>PyTorch</tag>
         <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Classic Literature</title>
+    <url>/posts/beb4e2e0/</url>
+    <content><![CDATA[<p>Literature management is of great importance and necessities during the doctoral period. Literature downloaded in PDF format takes up a lot of storage space and is difficult to find a specific one. Therefore, I created such a post to record some classic literature that connected much other literature or brought forward key concepts or methods. The literature is sorted alphabetically by the first author's name and topics.</p>
+<a id="more"></a>
+<h1 id="lin-zhangs-research-group-peking-university">1. Lin Zhang's Research Group, Peking University</h1>
+<h1 id="qiang-zhangs-research-group-tsinghua-university">2. Qiang Zhang's Research Group, Tsinghua University</h1>
+]]></content>
+      <tags>
+        <tag>Literature</tag>
       </tags>
   </entry>
   <entry>
@@ -104,15 +116,18 @@
       </tags>
   </entry>
   <entry>
-    <title>PyTorch Notes</title>
-    <url>/posts/6eaa0ee7/</url>
-    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
+    <title>Reading Notes for Overfitting and its Solutions</title>
+    <url>/posts/6a0a8c60/</url>
+    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
+<blockquote>
+<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
+</blockquote>
 <a id="more"></a>
 ]]></content>
       <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
         <tag>Deep Learning</tag>
+        <tag>Literature</tag>
+        <tag>Overfitting</tag>
       </tags>
   </entry>
   <entry>
@@ -125,34 +140,6 @@
         <tag>WRF</tag>
         <tag>CMAQ</tag>
         <tag>Numerical Model</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NCL Tips</title>
-    <url>/posts/70d7b46b/</url>
-    <content><![CDATA[<p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
-<a id="more"></a>
-<h1 id="data-io">1. Data IO</h1>
-<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>NCL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reading Notes for Overfitting and its Solutions</title>
-    <url>/posts/6a0a8c60/</url>
-    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
-<blockquote>
-<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
-</blockquote>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Literature</tag>
-        <tag>Deep Learning</tag>
-        <tag>Overfitting</tag>
       </tags>
   </entry>
   <entry>
@@ -177,6 +164,44 @@
         <tag>Git</tag>
         <tag>GitHub</tag>
         <tag>Vi/Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NCL Tips</title>
+    <url>/posts/70d7b46b/</url>
+    <content><![CDATA[<p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
+<a id="more"></a>
+<h1 id="data-io">1. Data IO</h1>
+<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>NCL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Limited-Memory BFGS</title>
+    <url>/posts/3154e3f2/</url>
+    <content><![CDATA[<p>Limited-Memory BFGS (L-BFGS) is a method of numerical optimization.</p>
+<a id="more"></a>
+<h1 id="newtons-method">1. Newton’s Method</h1>
+<h2 id="original">1.1. Original</h2>
+<h2 id="damped-newtons-method">1.2 Damped Newton's Method</h2>
+<h1 id="quasi-newton-method">2. Quasi-Newton Method</h1>
+<h2 id="bfgs">2.1. BFGS</h2>
+<h2 id="l-bfgs-bfgs-on-a-memory-budget">2.2. L-BFGS: BFGS on a Memory Budget</h2>
+<p><strong>References:</strong><br>
+1. <a href="https://blog.csdn.net/songbinxu/article/details/79677948">拟牛顿法（DFP、BFGS、L-BFGS）</a><br>
+2. <a href="https://aria42.com/blog/2014/12/understanding-lbfgs">Numerical Optimization: Understanding L-BFGS</a><br>
+3. <a href="https://zhuanlan.zhihu.com/p/29672873">深入机器学习系列17-BFGS &amp; L-BFGS</a><br>
+4. <a href="https://en.wikipedia.org/wiki/Limited-memory_BFGS">Limited-memory BFGS</a></p>
+]]></content>
+      <tags>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+        <tag>Mathematics</tag>
+        <tag>Optimization</tag>
+        <tag>Numerical Method</tag>
       </tags>
   </entry>
 </search>
