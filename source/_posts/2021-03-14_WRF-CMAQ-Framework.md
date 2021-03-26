@@ -5,6 +5,7 @@ tags:
   - CMAQ
   - Numerical Model
 abbrlink: b4df9b3e
+mathjax: true
 date: 2021-03-14 11:15:51
 ---
 
@@ -12,3 +13,4 @@ The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simul
 
 <!-- more -->
 
+![](WRF-CMAQ_Framework.png)

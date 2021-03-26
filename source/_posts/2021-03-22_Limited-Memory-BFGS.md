@@ -14,15 +14,15 @@ Limited-Memory BFGS (L-BFGS) is a method of numerical optimization.
 
 <!-- more -->
 
-# 1. Newton’s Method
-## 1.1. Original 
+# 1. Newton’s Method         
+## 1.1. Original       
 
-## 1.2 Damped Newton's Method
+## 1.2 Damped Newton's Method            
 
-# 2. Quasi-Newton Method
-## 2.1. BFGS
+# 2. Quasi-Newton Method         
+## 2.1. BFGS       
 
-## 2.2. L-BFGS: BFGS on a Memory Budget
+## 2.2. L-BFGS: BFGS on a Memory Budget          
 
 **References:**        
 1. [拟牛顿法（DFP、BFGS、L-BFGS）](https://blog.csdn.net/songbinxu/article/details/79677948)            
