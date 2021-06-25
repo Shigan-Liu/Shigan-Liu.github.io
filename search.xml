@@ -1,82 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python Tips</title>
-    <url>/posts/dcbfa745/</url>
-    <content><![CDATA[<p>Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
+    <title>Limited-Memory BFGS</title>
+    <url>/posts/3154e3f2/</url>
+    <content><![CDATA[<p>Limited-Memory BFGS (L-BFGS) is a method of numerical optimization.</p>
 <a id="more"></a>
-<h2 id="introduction">1. Introduction</h2>
-<h2 id="tips-for-pandas">2. Tips for Pandas</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = [<span class="built_in">str</span>(i).split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>].replace(<span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> dates]</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[&#x27;20170101&#x27;, &#x27;20170102&#x27;, &#x27;20170103&#x27;, &#x27;20170104&#x27;, &#x27;20170105&#x27;, &#x27;20170106&#x27;, &#x27;20170107&#x27;, &#x27;20170108&#x27;, &#x27;20170109&#x27;, &#x27;20170110&#x27;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-xarray">3. Tips for Xarray</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br><span class="line"></span><br><span class="line"><span class="comment"># NetCDF File IO</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br></pre></td></tr></table></figure>
+<h1 id="newtons-method">1. Newton’s Method</h1>
+<h2 id="original">1.1. Original</h2>
+<h2 id="damped-newtons-method">1.2 Damped Newton's Method</h2>
+<h1 id="quasi-newton-method">2. Quasi-Newton Method</h1>
+<h2 id="bfgs">2.1. BFGS</h2>
+<h2 id="l-bfgs-bfgs-on-a-memory-budget">2.2. L-BFGS: BFGS on a Memory Budget</h2>
 <p><strong>References:</strong><br>
-1. <a href="https://blog.csdn.net/weixin_42355670/article/details/106007204">cartopy 绘制中国地图，南海诸岛和十段线</a><br>
-2. <a href="https://www.kesci.com/mw/project/5f3c95a3af3980002cbf560b">Cartopy绘图 | 中国地图最正确的使用方式</a><br>
-3. <a href="https://blog.csdn.net/weixin_42372313/article/details/113572786">小白学习cartopy画地图的第一天</a><br>
-4. <a href="https://my.oschina.net/u/4579695/blog/4879010">Python兰伯特投影中国区域等值线图</a><br>
-5. <a href="https://github.com/SciTools/cartopy/issues/1530">How to remove latitude labels in x axis in cartopy 0.18</a></p>
-<h2 id="tips-for-basemap">5. Tips for Basemap</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> mpl_toolkits.base <span class="keyword">import</span> Basemap</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-numpy">6. Tips for Numpy</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-scipy">7. Tips for SciPy</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"></span><br><span class="line"><span class="comment"># Regression</span></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-pytorch">8. Tips for PyTorch</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-calendar-datetime-and-time">9. Tips for Calendar, Datetime, and Time</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Datetime &lt;=&gt; String</span></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
-<h2 id="tips-for-matplotlib-and-seaborn">10. Tips for MatPlotLib and Seaborn</h2>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>]=[<span class="string">&#x27;SimHei&#x27;</span>] <span class="comment"># To support Chinese character</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="literal">False</span> <span class="comment"># To display minus </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
-<p><strong>References:</strong></p>
+1. <a href="https://blog.csdn.net/songbinxu/article/details/79677948">拟牛顿法（DFP、BFGS、L-BFGS）</a><br>
+2. <a href="https://aria42.com/blog/2014/12/understanding-lbfgs">Numerical Optimization: Understanding L-BFGS</a><br>
+3. <a href="https://zhuanlan.zhihu.com/p/29672873">深入机器学习系列17-BFGS &amp; L-BFGS</a><br>
+4. <a href="https://en.wikipedia.org/wiki/Limited-memory_BFGS">Limited-memory BFGS</a></p>
 ]]></content>
       <tags>
-        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Deep Learning</tag>
+        <tag>Mathematics</tag>
+        <tag>Optimization</tag>
+        <tag>Numerical Method</tag>
       </tags>
   </entry>
   <entry>
-    <title>Classic Literature</title>
-    <url>/posts/beb4e2e0/</url>
-    <content><![CDATA[<p>Literature management is of great importance and necessities during the doctoral period. Literature downloaded in PDF format takes up a lot of storage space and is difficult to find a specific one. Therefore, I created such a post to record some classic literature that connected much other literature or brought forward key concepts or methods. The literature is sorted alphabetically by the first author's name and topics.</p>
+    <title>NCL Tips</title>
+    <url>/posts/70d7b46b/</url>
+    <content><![CDATA[<p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
 <a id="more"></a>
-<h1 id="lin-zhangs-research-group-peking-university">1. Lin Zhang's Research Group, Peking University</h1>
-<h1 id="qiang-zhangs-research-group-tsinghua-university">2. Qiang Zhang's Research Group, Tsinghua University</h1>
+<h1 id="data-io">1. Data IO</h1>
+<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>NCL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cheat Sheets</title>
+    <url>/posts/f341ad60/</url>
+    <content><![CDATA[<p>Cheat Sheets help me to quickly consult to some commands.</p>
+<a id="more"></a>
+<h1 id="github-git-cheat-sheet">1. GitHub Git Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page1.png"></p>
+<p><img src="/posts/f341ad60/github-git-cheat-sheet_page2.png"></p>
+<h1 id="matplotlib-cheat-sheet">2. MatPlotLib Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/matplotlib_cheatsheets-1.png"></p>
+<p><img src="/posts/f341ad60/matplotlib_cheatsheets-2.png"></p>
+<h1 id="pytorch-cheat-sheet">3. PyTorch Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/pytorch-cheat.jpg"></p>
+<h1 id="vim-cheat-sheet">4. Vim Cheat Sheet</h1>
+<p><img src="/posts/f341ad60/10-Best-VIM-Cheat-Sheet-03.jpg"></p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyTorch</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+        <tag>Vi/Vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WRF-CMAQ Model Framework</title>
+    <url>/posts/b4df9b3e/</url>
+    <content><![CDATA[<p>The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simulate the air quality. CMAQ relies on meteorological data to driven the simulated atmosphere so that the emissions, chemical and physical processes could work. We traditionally use the Weather Research and Forecasting (WRF) Model to provide the meteorological field. This post gives an overview of how the WRF-CMAQ modeling system organized and those data needed.</p>
+<a id="more"></a>
+<p><img src="/posts/b4df9b3e/WRF-CMAQ_Framework.png"></p>
+]]></content>
+      <tags>
+        <tag>WRF</tag>
+        <tag>CMAQ</tag>
+        <tag>Numerical Model</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reading Notes for Overfitting and its Solutions</title>
+    <url>/posts/6a0a8c60/</url>
+    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
+<blockquote>
+<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
+</blockquote>
+<a id="more"></a>
 ]]></content>
       <tags>
         <tag>Literature</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deep Brief Network</title>
-    <url>/posts/34f88668/</url>
-    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
         <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyTorch Notes</title>
-    <url>/posts/6eaa0ee7/</url>
-    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
-<a id="more"></a>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>PyTorch</tag>
-        <tag>Deep Learning</tag>
+        <tag>Overfitting</tag>
       </tags>
   </entry>
   <entry>
@@ -116,93 +127,82 @@
       </tags>
   </entry>
   <entry>
-    <title>Reading Notes for Overfitting and its Solutions</title>
-    <url>/posts/6a0a8c60/</url>
-    <content><![CDATA[<p>Overfitting is a fundamental issue in supervised machine learning which prevents us from perfectly generalizing the models to well fit observed data on training data, as well as unseen data on testing set. Xue (2019) discussed overfitting from the perspectives of causes and solutions. It is worthy to take some notes.</p>
-<blockquote>
-<p>Ying, Xue. &quot;An overview of overfitting and its solutions.&quot; Journal of Physics: Conference Series. Vol. 1168. No. 2. IOP Publishing, 2019.</p>
-</blockquote>
+    <title>Classic Literature</title>
+    <url>/posts/beb4e2e0/</url>
+    <content><![CDATA[<p>Literature management is of great importance and necessities during the doctoral period. Literature downloaded in PDF format takes up a lot of storage space and is difficult to find a specific one. Therefore, I created such a post to record some classic literature that connected much other literature or brought forward key concepts or methods. The literature is sorted alphabetically by the first author's name and topics.</p>
 <a id="more"></a>
+<h1 id="lin-zhangs-research-group-peking-university">1. Lin Zhang's Research Group, Peking University</h1>
+<h1 id="qiang-zhangs-research-group-tsinghua-university">2. Qiang Zhang's Research Group, Tsinghua University</h1>
 ]]></content>
       <tags>
         <tag>Literature</tag>
-        <tag>Deep Learning</tag>
-        <tag>Overfitting</tag>
       </tags>
   </entry>
   <entry>
-    <title>WRF-CMAQ Model Framework</title>
-    <url>/posts/b4df9b3e/</url>
-    <content><![CDATA[<p>The Community Multiscale Air Quality (CMAQ) model is a widely-used tool to simulate the air quality. CMAQ relies on meteorological data to driven the simulated atmosphere so that the emissions, chemical and physical processes could work. We traditionally use the Weather Research and Forecasting (WRF) Model to provide the meteorological field. This post gives an overview of how the WRF-CMAQ modeling system organized and those data needed.</p>
+    <title>Deep Brief Network</title>
+    <url>/posts/34f88668/</url>
+    <content><![CDATA[<p>A Deep Belief Network (DBN) is a multi-layer generative graphical model. DBNs have bi-directional connections (RBM-type connections) on the top layer while the bottom layers only have top-down connections. They are trained using layerwise pre-training. Pre-training occurs by training the network component by component bottom up: treating the first two layers as an RBM and training, then treating the second layer and third layer as another RBM and training for those parameters. <strong>Ref:</strong> <a href="https://paperswithcode.com/method/deep-belief-network">Deep Belief Network</a></p>
 <a id="more"></a>
-<p><img src="/posts/b4df9b3e/WRF-CMAQ_Framework.png"></p>
-]]></content>
-      <tags>
-        <tag>WRF</tag>
-        <tag>CMAQ</tag>
-        <tag>Numerical Model</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cheat Sheets</title>
-    <url>/posts/f341ad60/</url>
-    <content><![CDATA[<p>Cheat Sheets help me to quickly consult to some commands.</p>
-<a id="more"></a>
-<h1 id="github-git-cheat-sheet">1. GitHub Git Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/github-git-cheat-sheet_page1.png"></p>
-<p><img src="/posts/f341ad60/github-git-cheat-sheet_page2.png"></p>
-<h1 id="matplotlib-cheat-sheet">2. MatPlotLib Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/matplotlib_cheatsheets-1.png"></p>
-<p><img src="/posts/f341ad60/matplotlib_cheatsheets-2.png"></p>
-<h1 id="pytorch-cheat-sheet">3. PyTorch Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/pytorch-cheat.jpg"></p>
-<h1 id="vim-cheat-sheet">4. Vim Cheat Sheet</h1>
-<p><img src="/posts/f341ad60/10-Best-VIM-Cheat-Sheet-03.jpg"></p>
 ]]></content>
       <tags>
         <tag>Python</tag>
         <tag>PyTorch</tag>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-        <tag>Vi/Vim</tag>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
-    <title>NCL Tips</title>
-    <url>/posts/70d7b46b/</url>
-    <content><![CDATA[<p>NCAR Command Language (NCL) is a convenient tool for Earth system data processing. There are many tips and tricks to use it, which I would note down on this post.</p>
+    <title>PyTorch Notes</title>
+    <url>/posts/6eaa0ee7/</url>
+    <content><![CDATA[<p><a href="https://pytorch.org/">PyTorch</a> is a powerful and easy-to-use framework for deep learning, which is a indispensable tool for my research. It is of necessities to take notes when learning PyTorch for future to consult to. I will continuely update this post.</p>
 <a id="more"></a>
-<h1 id="data-io">1. Data IO</h1>
-<h2 id="read-and-write-files-in-format-of-netcdf">1.1. Read and Write Files in Format of NetCDF</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">    ; read file</span><br><span class="line">    data &#x3D; addfile(&quot;file_name.nc&quot;, &quot;r&quot;)</span><br><span class="line">    ; write file</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>NCL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Limited-Memory BFGS</title>
-    <url>/posts/3154e3f2/</url>
-    <content><![CDATA[<p>Limited-Memory BFGS (L-BFGS) is a method of numerical optimization.</p>
-<a id="more"></a>
-<h1 id="newtons-method">1. Newton’s Method</h1>
-<h2 id="original">1.1. Original</h2>
-<h2 id="damped-newtons-method">1.2 Damped Newton's Method</h2>
-<h1 id="quasi-newton-method">2. Quasi-Newton Method</h1>
-<h2 id="bfgs">2.1. BFGS</h2>
-<h2 id="l-bfgs-bfgs-on-a-memory-budget">2.2. L-BFGS: BFGS on a Memory Budget</h2>
-<p><strong>References:</strong><br>
-1. <a href="https://blog.csdn.net/songbinxu/article/details/79677948">拟牛顿法（DFP、BFGS、L-BFGS）</a><br>
-2. <a href="https://aria42.com/blog/2014/12/understanding-lbfgs">Numerical Optimization: Understanding L-BFGS</a><br>
-3. <a href="https://zhuanlan.zhihu.com/p/29672873">深入机器学习系列17-BFGS &amp; L-BFGS</a><br>
-4. <a href="https://en.wikipedia.org/wiki/Limited-memory_BFGS">Limited-memory BFGS</a></p>
-]]></content>
-      <tags>
+        <tag>Python</tag>
         <tag>PyTorch</tag>
         <tag>Deep Learning</tag>
-        <tag>Mathematics</tag>
-        <tag>Optimization</tag>
-        <tag>Numerical Method</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python Tips</title>
+    <url>/posts/dcbfa745/</url>
+    <content><![CDATA[<p>Scientific computing, plotting, and data IO highly rely on packages in python. However, there are much many specific and trivial methods and functions and they sometimes designed in quite different form in different packages, which are hard to memory. Therefore, I wrote this post to aid the usage of some important packages. It is assumed that readers have basic knowledge of python and those packages.</p>
+<a id="more"></a>
+<h2 id="introduction">1. Introduction</h2>
+<h2 id="tips-for-pandas">2. Tips for Pandas</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># On DataFrame</span></span><br><span class="line"><span class="comment">## Create DF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date series</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, end=<span class="string">&#x27;2020-01-10&#x27;</span>, freq=<span class="string">&#x27;5D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-06&#x27;], dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;5D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = pd.date_range(start=<span class="string">&#x27;2020-01-01&#x27;</span>, periods=<span class="number">10</span>, freq=<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">DatetimeIndex([&#x27;2020-01-01&#x27;, &#x27;2020-01-02&#x27;, &#x27;2020-01-03&#x27;, &#x27;2020-01-04&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-05&#x27;, &#x27;2020-01-06&#x27;, &#x27;2020-01-07&#x27;, &#x27;2020-01-08&#x27;,</span></span><br><span class="line"><span class="string">               &#x27;2020-01-09&#x27;, &#x27;2020-01-10&#x27;],</span></span><br><span class="line"><span class="string">              dtype=&#x27;datetime64[ns]&#x27;, freq=&#x27;D&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">dates = [<span class="built_in">str</span>(i).split(<span class="string">&#x27; &#x27;</span>)[<span class="number">0</span>].replace(<span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;&#x27;</span>) <span class="keyword">for</span> i <span class="keyword">in</span> dates]</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[&#x27;20170101&#x27;, &#x27;20170102&#x27;, &#x27;20170103&#x27;, &#x27;20170104&#x27;, &#x27;20170105&#x27;, &#x27;20170106&#x27;, &#x27;20170107&#x27;, &#x27;20170108&#x27;, &#x27;20170109&#x27;, &#x27;20170110&#x27;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-xarray">3. Tips for Xarray</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Xarray <span class="keyword">as</span> xr</span><br><span class="line"></span><br><span class="line"><span class="comment"># NetCDF File IO</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-cartopy">4. Tips for Cartopy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong><br>
+1. <a href="https://blog.csdn.net/weixin_42355670/article/details/106007204">cartopy 绘制中国地图，南海诸岛和十段线</a><br>
+2. <a href="https://www.kesci.com/mw/project/5f3c95a3af3980002cbf560b">Cartopy绘图 | 中国地图最正确的使用方式</a><br>
+3. <a href="https://blog.csdn.net/weixin_42372313/article/details/113572786">小白学习cartopy画地图的第一天</a><br>
+4. <a href="https://my.oschina.net/u/4579695/blog/4879010">Python兰伯特投影中国区域等值线图</a><br>
+5. <a href="https://github.com/SciTools/cartopy/issues/1530">How to remove latitude labels in x axis in cartopy 0.18</a></p>
+<h2 id="tips-for-basemap">5. Tips for Basemap</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> mpl_toolkits.base <span class="keyword">import</span> Basemap</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-numpy">6. Tips for Numpy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-scipy">7. Tips for SciPy</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"></span><br><span class="line"><span class="comment"># Regression</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-pytorch">8. Tips for PyTorch</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-calendar-datetime-and-time">9. Tips for Calendar, Datetime, and Time</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculate days between two dates</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Caltime</span>(<span class="params">date1, date2</span>):</span></span><br><span class="line">    <span class="comment"># &quot;%Y-%m-%d %H:%M:%S&quot; and &quot;%Y.%m.%d&quot; are formats of date string</span></span><br><span class="line">    <span class="comment">#date1=time.strptime(date1,&quot;%Y-%m-%d %H:%M:%S&quot;) </span></span><br><span class="line">    <span class="comment">#date2=time.strptime(date2,&quot;%Y-%m-%d %H:%M:%S&quot;)</span></span><br><span class="line">    date1 = time.strptime(date1,<span class="string">&quot;%Y.%m.%d&quot;</span>)</span><br><span class="line">    date2 = time.strptime(date2,<span class="string">&quot;%Y.%m.%d&quot;</span>)</span><br><span class="line">    <span class="comment"># Subscriptions, 0, 1, 2, 3, etc. denote year, month, day, hour, etc. respectively</span></span><br><span class="line">    <span class="comment">#date1=datetime.datetime(date1[0],date1[1],date1[2],date1[3],date1[4],date1[5])</span></span><br><span class="line">    <span class="comment">#date2=datetime.datetime(date2[0],date2[1],date2[2],date2[3],date2[4],date2[5])</span></span><br><span class="line">    date1 = datetime.datetime(date1[<span class="number">0</span>],date1[<span class="number">1</span>],date1[<span class="number">2</span>])</span><br><span class="line">    date2 = datetime.datetime(date2[<span class="number">0</span>],date2[<span class="number">1</span>],date2[<span class="number">2</span>])</span><br><span class="line">    <span class="comment"># Return the difference of two days, then plus 1</span></span><br><span class="line">    <span class="keyword">return</span> (date2 - date1).days + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Datetime &lt;=&gt; String</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+<h2 id="tips-for-matplotlib-and-seaborn">10. Tips for MatPlotLib and Seaborn</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sbn</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>]=[<span class="string">&#x27;SimHei&#x27;</span>] <span class="comment"># To support Chinese character</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="literal">False</span> <span class="comment"># To display minus </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bar Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pie Chart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter Plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Color Bar Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Legend Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Design Axes</span></span><br></pre></td></tr></table></figure>
+<p><strong>References:</strong></p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
